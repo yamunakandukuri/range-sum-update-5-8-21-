@@ -1,0 +1,56 @@
+import java.util.*;
+public class update
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("n=");
+        int n=sc.nextInt();
+        int a[]=new int[n];
+         System.out.println("enter elements ");
+             for(int i=0;i<n;i++)
+             {
+                 a[i]=sc.nextInt();
+             }
+        System.out.println("left index= ");
+        int left=sc.nextInt();
+         System.out.println("right index= ");
+         int right=sc.nextInt();
+          System.out.println("A= ");
+          int A=sc.nextInt();
+           System.out.println("B= ");
+           int B=sc.nextInt();
+            System.out.println("X= ");
+            int X=sc.nextInt();
+             int p[]=new int[n];
+             int sum=0;
+             p[0]=a[0];
+             for(int i=1;i<n;i++)
+             p[i]=p[i-1]+a[i];
+             if(left==0)
+             {
+                 sum=p[right];
+             }
+             else
+             {
+                 sum=p[right]-p[left-1];
+             }
+              System.out.println("sum of values in given range before ="+sum);
+              for(int j=A;j<=B;j++)
+              {
+                  a[j]=a[j]+X;
+              }
+              int sum1=0;
+              for(int i=1;i<n;i++)
+              p[i]=p[i-1]+a[i];
+              if(left==0)
+              {
+                  sum1=p[right];
+              }
+              else
+              {
+                  sum1=p[right]-p[left-1];
+              }
+               System.out.println("updated sum of values in given range= "+sum1);
+    }
+}
